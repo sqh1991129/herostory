@@ -1,0 +1,430 @@
+2021-09-19 19:36:07,373 printcloud INFO [main] o.h.ServerMain [ServerMain.java:15] 测试日志
+2021-09-19 19:37:01,517 default INFO [main] o.h.ServerMain [ServerMain.java:15] 测试日志
+2021-09-19 19:38:05,179 herostory INFO [main] o.h.ServerMain [ServerMain.java:15] 测试日志
+2021-09-19 19:54:06,078 herostory INFO [main] o.h.ServerMain [ServerMain.java:52] 服务端启动成功
+2021-09-19 20:07:31,540 herostory INFO [main] o.h.ServerMain [ServerMain.java:52] 服务端启动成功
+2021-09-19 20:24:27,837 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:54] 服务端启动成功
+2021-09-19 20:30:20,387 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:55] 服务端启动成功
+2021-09-19 20:30:29,164 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 20:30:29,165 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 20:30:50,488 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 20:30:50,489 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 21:04:43,530 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:05:41,352 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:07:43,776 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:11:34,342 herostory ERROR [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:53] 
+### Error getting a new connection.  Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+### Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error getting a new connection.  Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+### Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.getConnection(DefaultSqlSession.java:299)
+	at org.tinygame.herostory.MysqlSessionFactory.init(MysqlSessionFactory.java:49)
+	at org.tinygame.herostory.ServerMain.main(ServerMain.java:27)
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:224)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:219)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:432)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:139)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:61)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.getConnection(DefaultSqlSession.java:297)
+	... 2 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
+	... 16 common frames omitted
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 18 common frames omitted
+2021-09-19 21:11:34,791 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
+2021-09-19 21:14:57,605 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:16:54,881 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:16:55,978 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 21:16:56,149 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
+2021-09-19 21:17:55,395 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:17:56,269 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 21:17:56,407 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
+2021-09-19 21:18:04,725 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 21:18:04,725 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 21:19:53,771 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:19:54,645 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 21:19:55,009 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
+2021-09-19 21:20:00,998 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:17] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 21:20:00,999 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:17] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 21:30:48,504 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:30:49,490 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 21:30:49,923 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
+2021-09-19 21:31:04,745 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:18] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 21:31:04,745 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 获取到的消息编号为：0
+2021-09-19 21:31:04,746 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:18] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 21:31:04,746 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 获取到的消息编号为：2
+2021-09-19 21:57:13,222 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:57:14,117 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 21:57:14,540 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:59] 服务端启动成功
+2021-09-19 21:57:49,596 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 21:57:49,596 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 21:58:28,547 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 21:58:29,445 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 21:58:29,571 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:59] 服务端启动成功
+2021-09-19 21:58:41,416 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:1: 1
+2: "Hero_Hammer"
+
+2021-09-19 22:00:22,216 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:1: 1
+2: "Hero_Hammer"
+
+2021-09-19 22:01:49,261 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:01:50,140 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:01:50,501 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:60] 服务端启动成功
+2021-09-19 22:01:55,857 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:class org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-19 22:18:48,787 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:18:49,723 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:18:49,996 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:60] 服务端启动成功
+2021-09-19 22:19:34,883 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-19 22:19:34,933 herostory WARN [nioEventLoopGroup-1-1] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.ClassCastException: org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd cannot be cast to org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:27)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:62)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2021-09-19 22:19:59,751 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:20:01,101 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:20:01,244 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:60] 服务端启动成功
+2021-09-19 22:20:32,551 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-19 22:46:25,264 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:46:26,278 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:46:26,728 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 22:46:34,778 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-19 22:47:38,074 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:47:38,923 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:47:39,060 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 22:47:46,614 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-19 22:49:50,518 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-19 22:50:57,499 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:50:58,560 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:50:58,953 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 22:51:04,710 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-19 22:51:04,762 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgEncoder [GameMsgEncoder.java:40] msgCode=1
+2021-09-19 22:58:28,889 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:58:29,902 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:58:30,206 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 22:58:38,425 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
+2: "Hero_Hammer"
+
+2021-09-19 22:58:38,483 herostory WARN [nioEventLoopGroup-1-0] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.set(ArrayList.java:450)
+	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
+	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2021-09-19 22:58:38,485 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-19 22:58:38,486 herostory WARN [nioEventLoopGroup-1-0] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.set(ArrayList.java:450)
+	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
+	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2021-09-19 22:59:39,537 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 22:59:40,438 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 22:59:40,589 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 22:59:46,503 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
+2: "Hero_Hammer"
+
+2021-09-19 22:59:46,547 herostory WARN [nioEventLoopGroup-1-1] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.set(ArrayList.java:450)
+	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
+	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2021-09-19 22:59:46,549 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-19 22:59:46,549 herostory WARN [nioEventLoopGroup-1-1] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.set(ArrayList.java:450)
+	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
+	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2021-09-19 23:01:24,489 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 23:01:25,343 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 23:01:25,651 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 23:01:34,483 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
+2: "Hero_Hammer"
+
+2021-09-19 23:01:34,534 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
+2021-09-19 23:01:34,539 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-19 23:01:34,540 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
+2021-09-19 23:03:49,982 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-19 23:03:50,854 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-19 23:03:51,209 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
+2021-09-19 23:03:57,785 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-19 23:03:57,835 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
+2: "Hero_Hammer"
+
+2021-09-19 23:03:57,886 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
+2021-09-19 23:03:57,890 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-19 23:03:57,891 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-19 23:03:57,891 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
+2021-09-19 23:04:01,920 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:02,682 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:17,034 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:22,381 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:29,643 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:29,893 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:30,363 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:30,694 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-19 23:04:36,943 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
