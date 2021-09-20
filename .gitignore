@@ -8,4 +8,5 @@
 /httpRequests/
 .idea
 target/
-logs/
+logs/*
+*.log

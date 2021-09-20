@@ -12,6 +12,9 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.tinygame.herostory.cmdhandler.CmdHandlerFactory;
+
+import java.io.IOException;
 
 /**
  * 服务启动主类
@@ -23,6 +26,10 @@ public class ServerMain {
 
     public static void main(String[] args) {
 
+        //初始化消息处理器
+        GameMsgRecognizer.init();
+        //初始化cmdHandler
+        CmdHandlerFactory.init();
         //初始化数据库连接
         MysqlSessionFactory.init();
 
@@ -60,6 +67,10 @@ public class ServerMain {
           if (future.isSuccess()){
               LOGGER.info("服务端启动成功");
           }
+          //注册一个shutdownHook
+            Runtime.getRuntime().addShutdownHook(new Thread(()->{
+                System.out.println("应用停止");
+            }));
           //等待服务器信道关闭
           future.channel().closeFuture().sync();
         }catch (Exception e){

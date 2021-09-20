@@ -1,430 +1,687 @@
-2021-09-19 19:36:07,373 printcloud INFO [main] o.h.ServerMain [ServerMain.java:15] 测试日志
-2021-09-19 19:37:01,517 default INFO [main] o.h.ServerMain [ServerMain.java:15] 测试日志
-2021-09-19 19:38:05,179 herostory INFO [main] o.h.ServerMain [ServerMain.java:15] 测试日志
-2021-09-19 19:54:06,078 herostory INFO [main] o.h.ServerMain [ServerMain.java:52] 服务端启动成功
-2021-09-19 20:07:31,540 herostory INFO [main] o.h.ServerMain [ServerMain.java:52] 服务端启动成功
-2021-09-19 20:24:27,837 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:54] 服务端启动成功
-2021-09-19 20:30:20,387 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:55] 服务端启动成功
-2021-09-19 20:30:29,164 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 20:30:29,165 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 20:30:50,488 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 20:30:50,489 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 21:04:43,530 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:05:41,352 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:07:43,776 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:11:34,342 herostory ERROR [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:53] 
-### Error getting a new connection.  Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-### Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-org.apache.ibatis.exceptions.PersistenceException: 
-### Error getting a new connection.  Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-### Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.getConnection(DefaultSqlSession.java:299)
-	at org.tinygame.herostory.MysqlSessionFactory.init(MysqlSessionFactory.java:49)
-	at org.tinygame.herostory.ServerMain.main(ServerMain.java:27)
-Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:208)
-	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:224)
-	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:219)
-	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
-	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:432)
-	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
-	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:139)
-	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:61)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.getConnection(DefaultSqlSession.java:297)
-	... 2 common frames omitted
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+2021-09-21 00:06:53,984 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:06:54,123 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:06:54,128 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:06:54,133 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:06:54,139 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:06:54,142 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:06:54,145 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:06:54,151 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:06:54,156 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:06:54,164 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:06:54,169 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:06:54,174 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:06:54,179 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:06:54,183 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:06:54,195 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:06:55,290 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:06:55,408 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:69] 服务端启动成功
+2021-09-21 00:08:42,865 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:08:42,926 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:08:42,929 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:08:42,932 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:08:42,935 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:08:42,937 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:08:42,940 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:08:42,943 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:08:42,946 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:08:42,951 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:08:42,953 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:08:42,955 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:08:42,958 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:08:42,959 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:08:42,967 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:08:43,870 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:08:44,029 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:69] 服务端启动成功
+2021-09-21 00:10:12,865 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:10:12,929 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:10:12,932 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:10:12,935 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:10:12,937 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:10:12,939 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:10:12,942 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:10:12,945 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:10:12,948 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:10:12,952 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:10:12,954 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:10:12,956 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:10:12,959 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:10:12,975 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:10:12,989 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:10:13,943 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:10:14,367 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:69] 服务端启动成功
+2021-09-21 00:17:32,659 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:17:32,731 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:17:32,735 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:17:32,738 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:17:32,741 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:17:32,745 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:17:32,749 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:17:32,752 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:17:32,755 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:17:32,760 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:17:32,764 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:17:32,767 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:17:32,770 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:17:32,771 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:17:32,777 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:17:33,597 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:17:33,951 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:18:20,545 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:18:20,618 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:18:20,620 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:18:20,623 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:18:20,626 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:18:20,628 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:18:20,630 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:18:20,633 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:18:20,635 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:18:20,639 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:18:20,642 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:18:20,645 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:18:20,647 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:18:20,648 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:18:20,654 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:18:21,520 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:18:21,647 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:32:50,276 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:32:50,355 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:32:50,358 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:32:50,361 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:32:50,365 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:32:50,368 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:32:50,371 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:32:50,374 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:32:50,377 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:32:50,383 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:32:50,386 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:32:50,388 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:32:50,391 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:32:50,392 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:32:50,398 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:32:51,284 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:32:51,661 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:32:53,178 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:14] sssss
+2021-09-21 00:33:01,033 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:14] sssss
+2021-09-21 00:33:01,051 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:33:01,054 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:24] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 2
+heroAvatar: "Hero_Shaman"
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
-	... 16 common frames omitted
-Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
-	at java.net.Socket.connect(Socket.java:606)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 18 common frames omitted
-2021-09-19 21:11:34,791 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
-2021-09-19 21:14:57,605 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:16:54,881 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:16:55,978 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 21:16:56,149 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
-2021-09-19 21:17:55,395 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:17:56,269 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 21:17:56,407 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
-2021-09-19 21:18:04,725 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 21:18:04,725 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:14] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 21:19:53,771 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:19:54,645 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 21:19:55,009 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
-2021-09-19 21:20:00,998 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:17] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 21:20:00,999 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:17] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 21:30:48,504 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:30:49,490 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 21:30:49,923 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:58] 服务端启动成功
-2021-09-19 21:31:04,745 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:18] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 21:31:04,745 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 获取到的消息编号为：0
-2021-09-19 21:31:04,746 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:18] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 21:31:04,746 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 获取到的消息编号为：2
-2021-09-19 21:57:13,222 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:57:14,117 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 21:57:14,540 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:59] 服务端启动成功
-2021-09-19 21:57:49,596 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 21:57:49,596 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 21:58:28,547 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 21:58:29,445 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 21:58:29,571 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:59] 服务端启动成功
-2021-09-19 21:58:41,416 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:1: 1
-2: "Hero_Hammer"
+2021-09-21 00:33:01,064 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:33:01,065 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:24] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:33:01,654 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:14] sssss
+2021-09-21 00:33:02,981 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:14] sssss
+2021-09-21 00:34:42,441 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:34:42,525 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:34:42,528 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:34:42,532 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:34:42,536 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:34:42,541 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:34:42,546 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:34:42,550 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:34:42,553 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:34:42,561 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:34:42,564 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:34:42,568 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:34:42,572 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:34:42,574 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:34:42,583 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:34:43,494 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:34:43,661 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:34:51,168 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:34:51,172 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 2
+heroAvatar: "Hero_Shaman"
 
-2021-09-19 22:00:22,216 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:1: 1
-2: "Hero_Hammer"
-
-2021-09-19 22:01:49,261 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:01:50,140 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:01:50,501 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:60] 服务端启动成功
-2021-09-19 22:01:55,857 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:16] 读取到的信息:class org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
-2021-09-19 22:18:48,787 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:18:49,723 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:18:49,996 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:60] 服务端启动成功
-2021-09-19 22:19:34,883 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+2021-09-21 00:34:51,183 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:34:51,184 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:35:32,995 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:35:32,996 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
 heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:19:34,933 herostory WARN [nioEventLoopGroup-1-1] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
-java.lang.ClassCastException: org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd cannot be cast to org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
-	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:27)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:62)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
-	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
-	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
-	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
-	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
-	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
-	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
-	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
-2021-09-19 22:19:59,751 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:20:01,101 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:20:01,244 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:60] 服务端启动成功
-2021-09-19 22:20:32,551 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+2021-09-21 00:35:32,996 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:35:32,996 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:35:54,233 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:35:54,234 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
 heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:46:25,264 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:46:26,278 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:46:26,728 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 22:46:34,778 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+2021-09-21 00:35:54,235 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:35:54,235 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:36:01,236 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:36:01,236 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 2
+heroAvatar: "Hero_Shaman"
+
+2021-09-21 00:36:01,237 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:36:01,237 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:36:34,732 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:36:34,849 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:36:34,853 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:36:34,860 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:36:34,865 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:36:34,869 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:36:34,873 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:36:34,878 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:36:34,882 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:36:34,890 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:36:34,896 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:36:34,898 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:36:34,901 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:36:34,902 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:36:34,914 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:36:36,034 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:36:36,508 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:36:39,996 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:36:40,001 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 2
+heroAvatar: "Hero_Shaman"
+
+2021-09-21 00:36:40,016 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:36:40,017 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:36:45,313 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:36:45,314 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 2
+heroAvatar: "Hero_Shaman"
+
+2021-09-21 00:36:45,314 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:36:45,314 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:37:01,653 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:37:01,655 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
 heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:47:38,074 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:47:38,923 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:47:39,060 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 22:47:46,614 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+2021-09-21 00:37:01,656 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:37:01,657 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:38:39,087 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:38:39,157 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:38:39,160 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:38:39,163 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:38:39,168 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:38:39,170 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:38:39,173 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:38:39,177 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:38:39,180 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:38:39,186 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:38:39,189 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:38:39,190 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:38:39,193 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:38:39,194 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:38:39,201 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:38:40,134 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:38:40,514 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:38:45,032 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:38:45,035 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
 heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:49:50,518 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+2021-09-21 00:38:45,046 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:38:45,047 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:39:33,532 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:39:33,722 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:39:33,727 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:39:33,740 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:39:33,746 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:39:33,754 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:39:33,761 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:39:33,764 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:39:33,770 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:39:33,776 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:39:33,779 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:39:33,782 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:39:33,787 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:39:33,789 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:39:33,797 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:39:35,018 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:39:35,252 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:39:42,163 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:39:42,167 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
 heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:50:57,499 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:50:58,560 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:50:58,953 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 22:51:04,710 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+2021-09-21 00:40:09,425 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:40:09,427 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:41:10,795 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:41:10,895 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:41:10,899 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:41:10,901 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:41:10,904 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:41:10,907 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:41:10,912 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:41:10,915 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:41:10,918 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:41:10,923 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:41:10,928 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:41:10,931 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:41:10,935 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:41:10,937 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:41:10,952 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:41:11,996 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:41:12,162 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:41:33,404 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:41:33,494 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:41:33,496 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:41:33,498 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:41:33,500 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:41:33,502 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:41:33,504 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:41:33,508 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:41:33,510 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:41:33,512 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:41:33,514 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:41:33,516 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:41:33,518 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:41:33,524 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:42:47,111 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:42:52,603 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:42:52,685 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:42:52,687 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:42:52,688 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:42:52,690 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:42:52,691 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:42:52,693 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:42:52,695 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:42:52,697 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:42:52,699 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:42:52,700 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:42:52,702 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:42:52,703 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:42:52,707 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:42:54,642 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:42:55,584 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:42:55,744 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:43:03,601 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:43:03,691 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:43:03,694 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:43:03,697 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:43:03,700 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:43:03,703 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:43:03,706 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:43:03,708 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:43:03,712 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:43:03,716 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:43:03,718 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:43:03,721 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:43:03,723 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:43:03,730 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:43:46,935 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:44:25,818 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:44:25,913 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:44:25,916 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:44:25,919 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:44:25,923 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:44:25,927 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:44:25,931 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:44:25,934 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:44:25,938 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:44:25,944 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:44:25,948 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:44:25,951 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:44:25,955 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:44:25,956 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:44:25,965 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 00:44:25,965 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:44:25,966 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 00:44:25,966 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:44:25,967 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:44:26,944 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:44:27,117 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:44:46,962 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:44:46,967 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
 heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:51:04,762 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgEncoder [GameMsgEncoder.java:40] msgCode=1
-2021-09-19 22:58:28,889 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:58:29,902 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:58:30,206 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 22:58:38,425 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
-2: "Hero_Hammer"
+2021-09-21 00:44:46,993 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:44:46,995 herostory INFO [nioEventLoopGroup-1-4] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:45:53,337 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:45:53,338 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:58:38,483 herostory WARN [nioEventLoopGroup-1-0] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
-java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
-	at java.util.ArrayList.set(ArrayList.java:450)
-	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
-	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
-	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
-	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
-	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
-	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
-	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
-	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
-	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
-2021-09-19 22:58:38,485 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
-2021-09-19 22:58:38,486 herostory WARN [nioEventLoopGroup-1-0] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
-java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
-	at java.util.ArrayList.set(ArrayList.java:450)
-	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
-	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
-	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
-	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
-	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
-	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
-	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
-	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
-	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
-2021-09-19 22:59:39,537 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 22:59:40,438 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 22:59:40,589 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 22:59:46,503 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
-2: "Hero_Hammer"
+2021-09-21 00:50:36,572 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:50:36,577 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:50:40,608 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:50:40,672 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:50:40,675 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:50:40,678 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:50:40,681 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:50:40,684 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:50:40,687 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:50:40,690 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:50:40,693 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:50:40,697 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:50:40,700 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:50:40,703 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:50:40,706 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:50:40,707 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:50:40,712 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 00:50:40,712 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:50:40,712 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 00:50:40,712 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:50:40,713 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:50:41,575 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:50:42,050 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:50:54,433 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:50:54,436 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=UserEntryCmd,msg=userId: 1
+heroAvatar: "Hero_Hammer"
 
-2021-09-19 22:59:46,547 herostory WARN [nioEventLoopGroup-1-1] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
-java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
-	at java.util.ArrayList.set(ArrayList.java:450)
-	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
-	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
-	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
-	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
-	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
-	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
-	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
-	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
-	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
-2021-09-19 22:59:46,549 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
-2021-09-19 22:59:46,549 herostory WARN [nioEventLoopGroup-1-1] i.n.c.DefaultChannelPipeline [Slf4JLogger.java:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
-java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
-	at java.util.ArrayList.set(ArrayList.java:450)
-	at org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult$Builder.setUserInfo(GameMsgProtocol.java:3366)
-	at org.tinygame.herostory.GameMsgHandler.channelRead(GameMsgHandler.java:40)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at org.tinygame.herostory.GameMsgDecoder.channelRead(GameMsgDecoder.java:63)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.ChannelHandlerAdapter.channelRead(ChannelHandlerAdapter.java:143)
-	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:86)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler$1.channelRead(WebSocketServerProtocolHandler.java:156)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:243)
-	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelReadNow(ChannelHandlerInvokerUtil.java:84)
-	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRead(DefaultChannelHandlerInvoker.java:153)
-	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRead(PausableChannelEventExecutor.java:86)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:389)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:956)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:127)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:514)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:471)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:385)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
-	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
-	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
-	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
-	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
-	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
-	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
-2021-09-19 23:01:24,489 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 23:01:25,343 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 23:01:25,651 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 23:01:34,483 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
-2: "Hero_Hammer"
+2021-09-21 00:50:54,446 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
 
-2021-09-19 23:01:34,534 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
-2021-09-19 23:01:34,539 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
-2021-09-19 23:01:34,540 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
-2021-09-19 23:03:49,982 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
-2021-09-19 23:03:50,854 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
-2021-09-19 23:03:51,209 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:61] 服务端启动成功
-2021-09-19 23:03:57,785 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
-2021-09-19 23:03:57,835 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=1: 1
-2: "Hero_Hammer"
+2021-09-21 00:50:54,448 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:50:54,449 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgHandler [GameMsgHandler.java:28] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
+2021-09-21 00:50:54,449 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 00:52:03,815 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:52:03,897 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:52:03,900 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:52:03,903 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:52:03,906 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:52:03,910 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:52:03,913 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:52:03,917 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:52:03,920 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:52:03,926 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:52:03,929 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:52:03,931 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:52:03,934 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:52:03,938 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:52:40,238 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 00:52:40,239 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:52:40,241 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 00:52:40,241 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:52:40,243 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:52:41,234 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:52:42,367 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:52:53,174 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:52:53,185 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
 
-2021-09-19 23:03:57,886 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
-2021-09-19 23:03:57,890 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
-2021-09-19 23:03:57,891 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgHandler [GameMsgHandler.java:21] 收到客户端消息：msgClass=WhoElseIsHereCmd,msg=
-2021-09-19 23:03:57,891 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:43] msgCode=3
-2021-09-19 23:04:01,920 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:02,682 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:17,034 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:22,381 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:29,643 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:29,893 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:30,363 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:30,694 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
-2021-09-19 23:04:36,943 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:41] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 10, cap: 10))
+2021-09-21 00:54:24,295 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:54:24,299 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 00:54:44,194 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:54:44,280 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:54:44,283 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:54:44,288 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:54:44,291 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:54:44,294 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:54:44,298 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:54:44,302 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:54:44,308 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:54:44,314 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:54:44,317 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:54:44,323 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:54:44,327 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:54:44,332 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:54:46,261 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 00:54:46,261 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:54:46,262 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 00:54:46,262 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:54:46,264 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:54:47,261 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:54:47,450 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:55:46,386 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:55:46,390 herostory INFO [nioEventLoopGroup-1-2] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 00:55:46,403 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:55:46,404 herostory INFO [nioEventLoopGroup-1-2] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 00:56:16,821 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 00:56:16,910 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 00:56:16,913 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 00:56:16,915 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 00:56:16,917 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 00:56:16,920 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 00:56:16,922 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 00:56:16,925 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 00:56:16,927 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 00:56:16,931 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 00:56:16,933 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 00:56:16,936 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 00:56:16,938 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:76] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 00:56:16,940 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:56:16,945 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 00:56:16,946 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:56:16,946 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 00:56:16,946 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:56:16,947 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:56:17,889 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:56:18,056 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:57:20,325 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:57:20,334 herostory INFO [nioEventLoopGroup-1-0] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 00:57:43,512 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:57:43,513 herostory INFO [nioEventLoopGroup-1-0] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 00:59:17,068 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult <==> 12
+2021-09-21 00:59:17,074 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult <==> 11
+2021-09-21 00:59:17,076 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult <==> 10
+2021-09-21 00:59:17,078 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> 9
+2021-09-21 00:59:17,081 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult <==> 8
+2021-09-21 00:59:17,083 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd <==> 7
+2021-09-21 00:59:17,085 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult <==> 6
+2021-09-21 00:59:17,086 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult <==> 5
+2021-09-21 00:59:17,089 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> 4
+2021-09-21 00:59:17,092 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult <==> 3
+2021-09-21 00:59:17,094 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> 2
+2021-09-21 00:59:17,096 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult <==> 1
+2021-09-21 00:59:17,097 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:79] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> 0
+2021-09-21 00:59:17,098 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 00:59:17,102 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 00:59:17,102 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:59:17,103 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 00:59:17,103 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 00:59:17,103 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 00:59:17,912 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 00:59:18,243 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 00:59:39,142 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 00:59:39,160 herostory INFO [nioEventLoopGroup-1-0] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 00:59:39,202 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 00:59:39,203 herostory INFO [nioEventLoopGroup-1-0] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:01:42,355 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:01:42,363 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:01:42,366 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:01:42,369 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:01:42,374 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:01:42,377 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:01:42,380 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:01:42,384 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:01:42,388 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:01:42,393 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:01:42,396 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:01:42,399 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:01:42,403 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:01:42,406 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 01:01:42,412 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 01:01:42,412 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:01:42,412 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 01:01:42,412 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:01:42,413 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:01:43,261 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:01:43,740 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:01:47,360 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:01:47,377 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:01:47,424 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:01:47,424 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:03:42,873 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:03:42,880 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:03:42,884 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:03:42,888 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:03:42,891 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:03:42,894 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:03:42,898 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:03:42,902 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:03:42,905 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:03:42,911 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:03:42,914 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:03:42,917 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:03:42,921 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:03:42,922 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] === 完成命令与处理器的关联 ===
+2021-09-21 01:03:42,928 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:03:43,807 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:03:44,149 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:03:56,125 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:03:56,146 herostory INFO [nioEventLoopGroup-1-0] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:03:56,203 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:03:56,204 herostory INFO [nioEventLoopGroup-1-0] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:04:21,500 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:04:21,512 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:04:21,516 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:04:21,520 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:04:21,524 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:04:21,528 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:04:21,531 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:04:21,536 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:04:21,540 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:04:21,546 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:04:21,549 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:04:21,554 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:04:21,558 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:04:21,563 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 01:04:23,737 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 01:04:23,738 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:04:23,739 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 01:04:23,739 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:04:23,741 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:04:24,735 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:04:24,944 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:04:32,622 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:04:32,650 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:10:04,152 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:10:04,159 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:10:07,962 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:10:07,967 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:10:07,971 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:10:07,975 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:10:07,977 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:10:07,980 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:10:07,983 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:10:07,987 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:10:07,990 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:10:07,994 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:10:07,997 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:10:08,000 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:10:08,004 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:10:08,005 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 01:10:08,012 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 01:10:08,013 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:10:08,014 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 01:10:08,014 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:10:08,015 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:10:09,022 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:10:09,482 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:10:23,273 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:10:23,292 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:10:23,341 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:10:23,342 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:11:20,136 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:11:20,147 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:11:20,151 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:11:20,154 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:11:20,159 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:11:20,163 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:11:20,166 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:11:20,169 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:11:20,173 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:11:20,180 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:11:20,183 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:11:20,186 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:11:20,191 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:11:20,196 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 01:11:21,797 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 01:11:21,797 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:11:21,798 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 01:11:21,798 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:11:21,799 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:11:22,797 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:11:22,962 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:11:28,422 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:11:28,450 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:11:28,550 herostory INFO [nioEventLoopGroup-1-1] o.t.h.c.UserEntryCmdHandler [UserEntryCmdHandler.java:19] 用户编号：1
+2021-09-21 01:11:28,552 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:11:28,562 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:11:28,563 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:11:28,572 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=3
+2021-09-21 01:11:42,973 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:11:42,976 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 2
+heroAvatar: "Hero_Shaman"
+
+2021-09-21 01:11:42,977 herostory INFO [nioEventLoopGroup-1-1] o.t.h.c.UserEntryCmdHandler [UserEntryCmdHandler.java:19] 用户编号：2
+2021-09-21 01:11:42,981 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:11:42,981 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:11:42,981 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:11:42,982 herostory INFO [nioEventLoopGroup-1-1] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:11:42,982 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=3
+2021-09-21 01:11:52,174 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 6, cap: 6))
+2021-09-21 01:11:52,175 herostory INFO [nioEventLoopGroup-1-2] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserAttkCmd, msgObj = targetUserId: 2
+
+2021-09-21 01:11:53,326 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 6, cap: 6))
+2021-09-21 01:11:53,327 herostory INFO [nioEventLoopGroup-1-2] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserAttkCmd, msgObj = targetUserId: 2
+
+2021-09-21 01:15:43,025 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:15:43,032 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:15:43,037 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:15:43,040 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:15:43,042 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:15:43,045 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:15:43,048 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:15:43,052 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:15:43,055 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:15:43,059 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:15:43,062 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:15:43,063 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:15:43,066 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:15:43,068 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 01:15:43,074 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 01:15:43,074 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:15:43,074 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 01:15:43,074 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:15:43,075 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:15:43,957 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:15:44,288 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:15:53,087 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:15:53,107 herostory INFO [nioEventLoopGroup-1-3] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:15:53,147 herostory INFO [nioEventLoopGroup-1-3] o.t.h.c.UserEntryCmdHandler [UserEntryCmdHandler.java:20] 用户编号：1
+2021-09-21 01:15:53,148 herostory INFO [nioEventLoopGroup-1-3] o.t.h.c.UserEntryCmdHandler [UserEntryCmdHandler.java:24] 缓存中的用户编号：1
+2021-09-21 01:15:53,151 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:15:53,151 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:15:53,155 herostory INFO [nioEventLoopGroup-1-0] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:15:53,194 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:15:53,195 herostory INFO [nioEventLoopGroup-1-3] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:15:53,199 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=3
+2021-09-21 01:16:05,492 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:12,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserDieResult
+2021-09-21 01:16:05,500 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:11,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserSubtractHpResult
+2021-09-21 01:16:05,502 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:10,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkResult
+2021-09-21 01:16:05,506 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:9,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+2021-09-21 01:16:05,508 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:8,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopResult
+2021-09-21 01:16:05,511 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:7,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserStopCmd
+2021-09-21 01:16:05,514 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:6,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserQuitResult
+2021-09-21 01:16:05,516 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:5,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToResult
+2021-09-21 01:16:05,519 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:4,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+2021-09-21 01:16:05,524 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:3,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereResult
+2021-09-21 01:16:05,526 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:2,类名：org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+2021-09-21 01:16:05,528 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:1,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryResult
+2021-09-21 01:16:05,530 herostory INFO [main] o.t.h.GameMsgRecognizer [GameMsgRecognizer.java:131] 当前msgCode:0,类名：org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+2021-09-21 01:16:05,532 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:32] 开始初始化cmdHandler
+2021-09-21 01:16:05,538 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdhandler.WhoElseIsHereCmdHandler
+2021-09-21 01:16:05,539 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:16:05,539 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:70] org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdhandler.UserEntryCmdHandler
+2021-09-21 01:16:05,539 herostory INFO [main] o.t.h.c.CmdHandlerFactory [CmdHandlerFactory.java:80] 结束初始化cmdHandler
+2021-09-21 01:16:05,540 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:43] 开始初始化mysql
+2021-09-21 01:16:06,396 herostory INFO [main] o.t.h.MysqlSessionFactory [MysqlSessionFactory.java:51] mysql连接成功
+2021-09-21 01:16:06,526 herostory INFO [main] o.t.h.ServerMain [ServerMain.java:68] 服务端启动成功
+2021-09-21 01:16:12,754 herostory INFO [nioEventLoopGroup-1-5] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 19, cap: 19))
+2021-09-21 01:16:12,773 herostory INFO [nioEventLoopGroup-1-5] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = UserEntryCmd, msgObj = userId: 1
+heroAvatar: "Hero_Hammer"
+
+2021-09-21 01:16:12,812 herostory INFO [nioEventLoopGroup-1-5] o.t.h.c.UserEntryCmdHandler [UserEntryCmdHandler.java:20] 用户编号：1
+2021-09-21 01:16:12,813 herostory INFO [nioEventLoopGroup-1-5] o.t.h.c.UserEntryCmdHandler [UserEntryCmdHandler.java:24] 缓存中的用户编号：1
+2021-09-21 01:16:12,816 herostory INFO [nioEventLoopGroup-1-1] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:16:12,816 herostory INFO [nioEventLoopGroup-1-3] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:16:12,816 herostory INFO [nioEventLoopGroup-1-5] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:16:12,821 herostory INFO [nioEventLoopGroup-1-2] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=1
+2021-09-21 01:16:12,878 herostory INFO [nioEventLoopGroup-1-5] o.t.h.GameMsgDecoder [GameMsgDecoder.java:42] 收到消息：BinaryWebSocketFrame(data: PooledUnsafeDirectByteBuf(ridx: 0, widx: 4, cap: 4))
+2021-09-21 01:16:12,879 herostory INFO [nioEventLoopGroup-1-5] o.t.h.MainMsgProcess [MainMsgProcess.java:24] 收到客户端消息, msgClazz = WhoElseIsHereCmd, msgObj = 
+2021-09-21 01:16:12,888 herostory INFO [nioEventLoopGroup-1-5] o.t.h.GameMsgEncoder [GameMsgEncoder.java:35] msgCode=3

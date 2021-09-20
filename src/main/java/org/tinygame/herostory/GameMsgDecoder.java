@@ -2,6 +2,7 @@ package org.tinygame.herostory;
 
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -51,17 +52,13 @@ public class GameMsgDecoder extends ChannelHandlerAdapter {
             byte[] msgBody = new byte[byteBuf.readableBytes()];
             byteBuf.readBytes(msgBody);
 
-            GeneratedMessageV3 messageV3 = null;
-            switch (msgCode) {
-                case GameMsgProtocol.MsgCode.USER_ENTRY_CMD_VALUE:
-                    messageV3 = GameMsgProtocol.UserEntryCmd.parseFrom(msgBody);
-                case GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_CMD_VALUE:
-                    messageV3 = GameMsgProtocol.WhoElseIsHereCmd.parseFrom(msgBody);
-                default:
-                    break;
-            }
-            if (null != messageV3) {
-                ctx.fireChannelRead(messageV3);
+            //统一消息识别器
+            Message.Builder builder = GameMsgRecognizer.msgRecognizer(msgCode);
+            builder.clear();
+            builder.mergeFrom(msgBody);
+           Message message =  builder.build();
+            if (null != message) {
+                ctx.fireChannelRead(message);
             }
         } catch (Exception e) {
 

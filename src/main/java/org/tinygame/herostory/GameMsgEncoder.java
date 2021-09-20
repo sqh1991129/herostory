@@ -8,7 +8,6 @@ import io.netty.channel.ChannelPromise;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.tinygame.herostory.msg.GameMsgProtocol;
 
 /**
  * 自定义消息解码器
@@ -23,7 +22,6 @@ public class GameMsgEncoder extends ChannelHandlerAdapter {
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) {
         try {
 
-
             if (null == ctx || null == msg || null == promise) {
                 return;
             }
@@ -33,13 +31,7 @@ public class GameMsgEncoder extends ChannelHandlerAdapter {
                 super.write(ctx, msg, promise);
                 return;
             }
-            int msgCode = -1;
-            if (msg instanceof GameMsgProtocol.UserEntryResult) {
-                msgCode = GameMsgProtocol.MsgCode.USER_ENTRY_RESULT_VALUE;
-            }
-            if (msg instanceof GameMsgProtocol.WhoElseIsHereResult){
-                msgCode = GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_RESULT_VALUE;
-            }
+            int msgCode = GameMsgRecognizer.getMsgCode(msg.getClass());
             LOGGER.info("msgCode={}",msgCode);
             byte[] msgBody = ((GeneratedMessageV3) msg).toByteArray();
             ByteBuf byteBuf = ctx.alloc().buffer();
